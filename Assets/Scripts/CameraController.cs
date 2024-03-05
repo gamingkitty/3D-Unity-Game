@@ -2,22 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class MouseLook : MonoBehaviour
 {
-
-    Vector2 rotation = Vector2.zero;
-    public float speed = 3;
-
+    [SerializeField] float mouseSensitivity = 100f;
+    [SerializeField] Transform playerTransform;
+    float xRotation;
+    // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-
+    // Update is called once per frame
     void Update()
     {
-        rotation.y += Input.GetAxis("Mouse X");
-        rotation.x += -Input.GetAxis("Mouse Y");
-        transform.eulerAngles = (Vector2)rotation * speed;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        playerTransform.Rotate(Vector3.up * mouseX);
     }
 }
