@@ -10,6 +10,8 @@ public class MovementScriptPlayer : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask playerMask;
     [SerializeField] Camera playerCamera;
+    [SerializeField] int normalFOV = 60;
+    [SerializeField] float FOVMutliplier = 2f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float groundCheckRadius = 0.2f;
     [SerializeField] float jumpHeight = 1;
@@ -21,16 +23,22 @@ public class MovementScriptPlayer : MonoBehaviour
     [SerializeField] float airFriction = 0.95f;
     [SerializeField] float groundShiftFriction = 0.8f;
     [SerializeField] float airShiftFriction = 0.85f;
+    [SerializeField] float sprintSpeed = 16f;
+    [SerializeField] float FOVAnimationSpeed = 120f;
     public float speed = 10f;
     float horizontalInput;
     float verticalInput;
     bool isShifting = false;
+    bool isSprinting = false;
+    int desiredFOV = 0;
+    float currentFOV = 0f;
     Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        desiredFOV = normalFOV;
+        currentFOV = normalFOV;
     }
 
     // Update is called once per frame
@@ -65,21 +73,34 @@ public class MovementScriptPlayer : MonoBehaviour
             speed = shiftSpeed;
         }
         //Uncrouching if not pressing left shift
-        else
+        else if (isShifting)
         {
-            if (isShifting)
-            {
-                playerTransform.localScale = new Vector3(1, 1, 1);
-                isShifting = false;
-            }
+            playerTransform.localScale = new Vector3(1, 1, 1);
+            isShifting = false;
         }
         if (!isGrounded)
         {
             speed = airSpeed;
         }
-
+        //Check for sprint
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (!isSprinting)
+            {
+                isSprinting = true;
+            }
+            if (!isShifting) speed = sprintSpeed;
+            else speed = normalSpeed;
+        }
+        else if (isSprinting)
+        {
+            isSprinting = false;
+        }
         //Speed section end
-
+        //FOV handler for Sprint
+        if (currentFOV < desiredFOV) currentFOV += FOVAnimationSpeed * Time.deltaTime;
+        else if (currentFOV > desiredFOV) currentFOV -= FOVAnimationSpeed * Time.deltaTime;
+        playerCamera.fieldOfView = (int)currentFOV;
         //Applying gravity
         velocity.y += gravity * Time.deltaTime;
 
@@ -94,22 +115,26 @@ public class MovementScriptPlayer : MonoBehaviour
         {
             if (isGrounded)
             {
-                velocity *= (float)Math.Pow(groundFriction, Time.deltaTime * 10);
+                velocity.x *= (float)Math.Pow(groundFriction, Time.deltaTime * 10);
+                velocity.z *= (float)Math.Pow(groundFriction, Time.deltaTime * 10);
             }
             else
             {
-                velocity *= (float)Math.Pow(airFriction, Time.deltaTime * 10);
+                velocity.x *= (float)Math.Pow(airFriction, Time.deltaTime * 10);
+                velocity.z *= (float)Math.Pow(airFriction, Time.deltaTime * 10);
             }
         }
         else
         {
             if (isGrounded)
             {
-                velocity *= (float)Math.Pow(groundShiftFriction, Time.deltaTime * 10);
+                velocity.x *= (float)Math.Pow(groundShiftFriction, Time.deltaTime * 10);
+                velocity.z *= (float)Math.Pow(groundShiftFriction, Time.deltaTime * 10);
             }
             else
             {
-                velocity *= (float)Math.Pow(airShiftFriction, Time.deltaTime * 10);
+                velocity.x *= (float)Math.Pow(airShiftFriction, Time.deltaTime * 10);
+                velocity.z *= (float)Math.Pow(airShiftFriction, Time.deltaTime * 10);
             }
         }
 
@@ -118,6 +143,9 @@ public class MovementScriptPlayer : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
+        float avgSpeed = Math.Abs(velocity.x + velocity.z) / 2;
+        avgSpeed = Math.Max((float)Math.Log(avgSpeed), 0);
+        desiredFOV = (int)(normalFOV + avgSpeed * FOVMutliplier);
 
         //Moving the player based on the vector3
         //playerController.Move(move * speed * Time.deltaTime);

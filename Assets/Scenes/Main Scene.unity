@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641275, b: 0.5748176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -253,15 +253,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   playerCamera: {fileID: 963194227}
+  normalFOV: 60
+  FOVMutliplier: 2
   gravity: -9.81
   groundCheckRadius: 0.2
   jumpHeight: 1
   shiftScale: 0.8
-  shiftSpeed: 2.5
-  normalSpeed: 5
+  shiftSpeed: 5
+  normalSpeed: 10
   airSpeed: 1
   groundFriction: 0.9
   airFriction: 0.95
+  groundShiftFriction: 0.8
+  airShiftFriction: 0.85
+  sprintSpeed: 16
+  FOVAnimationSpeed: 120
   speed: 5
 --- !u!143 &17496056
 CharacterController:
@@ -674,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037e29d152edd084ab230e9fb5002d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 750
+  mouseSensitivity: 2500
   playerTransform: {fileID: 17496054}
 --- !u!1 &988572065
 GameObject:
