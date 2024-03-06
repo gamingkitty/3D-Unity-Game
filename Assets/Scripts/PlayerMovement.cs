@@ -60,7 +60,6 @@ public class MovementScriptPlayer : MonoBehaviour
 
         //Setting speed to normal speed as default
         speed = normalSpeed;
-
         //Check if pressing left shift and crouching
         if (Input.GetKey(KeyCode.LeftShift))
         {
