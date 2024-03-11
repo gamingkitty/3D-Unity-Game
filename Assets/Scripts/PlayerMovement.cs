@@ -11,20 +11,20 @@ public class MovementScriptPlayer : MonoBehaviour
     [SerializeField] LayerMask playerMask;
     [SerializeField] Camera playerCamera;
     [SerializeField] int normalFOV = 60;
-    [SerializeField] float FOVMutliplier = 2f;
+    [SerializeField] float FOVMutliplier = 7f;
     [SerializeField] float gravity = -9.81f;
-    [SerializeField] float groundCheckRadius = 0.2f;
-    [SerializeField] float jumpHeight = 1;
+    [SerializeField] float groundCheckRadius = 0.6f;
+    [SerializeField] float jumpHeight = 1.5f;
     [SerializeField] float shiftScale = 0.8f;
     [SerializeField] float shiftSpeed = 5.0f;
     [SerializeField] float normalSpeed = 10f;
-    [SerializeField] float airSpeed = 1.0f;
-    [SerializeField] float groundFriction = 0.9f;
-    [SerializeField] float airFriction = 0.95f;
-    [SerializeField] float groundShiftFriction = 0.8f;
+    [SerializeField] float airSpeed = 3.0f;
+    [SerializeField] float groundFriction = 0.83f;
+    [SerializeField] float airFriction = 0.98f;
+    [SerializeField] float groundShiftFriction = 0.7f;
     [SerializeField] float airShiftFriction = 0.85f;
     [SerializeField] float sprintSpeed = 16f;
-    [SerializeField] float FOVAnimationSpeed = 120f;
+    [SerializeField] float FOVAnimationSpeed = 20f;
     public float speed = 10f;
     float horizontalInput;
     float verticalInput;
@@ -39,6 +39,22 @@ public class MovementScriptPlayer : MonoBehaviour
     {
         desiredFOV = normalFOV;
         currentFOV = normalFOV;
+
+        normalFOV = 60;
+        FOVMutliplier = 7f;
+        gravity = -9.81f;
+        groundCheckRadius = 0.6f;
+        jumpHeight = 1.5f;
+        shiftScale = 0.8f;
+        shiftSpeed = 5.0f;
+        normalSpeed = 10f;
+        airSpeed = 3.0f;
+        groundFriction = 0.83f;
+        airFriction = 0.98f;
+        groundShiftFriction = 0.7f;
+        airShiftFriction = 0.85f;
+        sprintSpeed = 16f;
+        FOVAnimationSpeed = 20f;
     }
 
     // Update is called once per frame
@@ -77,10 +93,6 @@ public class MovementScriptPlayer : MonoBehaviour
             playerTransform.localScale = new Vector3(1, 1, 1);
             isShifting = false;
         }
-        if (!isGrounded)
-        {
-            speed = airSpeed;
-        }
         //Check for sprint
         if (Input.GetKey(KeyCode.LeftControl))
         {
@@ -95,11 +107,18 @@ public class MovementScriptPlayer : MonoBehaviour
         {
             isSprinting = false;
         }
+        if (!isGrounded)
+        {
+            speed = airSpeed;
+        }
         //Speed section end
         //FOV handler for Sprint
-        if (currentFOV < desiredFOV) currentFOV += FOVAnimationSpeed * Time.deltaTime;
-        else if (currentFOV > desiredFOV) currentFOV -= FOVAnimationSpeed * Time.deltaTime;
-        playerCamera.fieldOfView = (int)currentFOV;
+        if ((int)currentFOV != desiredFOV)
+        {
+            if (currentFOV < desiredFOV) currentFOV += FOVAnimationSpeed * Time.deltaTime;
+            else if (currentFOV > desiredFOV) currentFOV -= FOVAnimationSpeed * Time.deltaTime;
+        }
+        playerCamera.fieldOfView = currentFOV;
         //Applying gravity
         velocity.y += gravity * Time.deltaTime;
 
