@@ -256,7 +256,7 @@ MonoBehaviour:
   normalFOV: 60
   FOVMutliplier: 7
   gravity: -9.81
-  groundCheckRadius: 0.55
+  groundCheckRadius: 0.6
   jumpHeight: 1.5
   shiftScale: 0.8
   shiftSpeed: 5
@@ -327,6 +327,63 @@ Transform:
   - {fileID: 1939773824}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &198097672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.291397
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000667572
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.6303425
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632309215521972615, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_Name
+      value: Robot Enemy Shooter (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
 --- !u!1 &287647960
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +478,181 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &337952013
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.985121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00001335144
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.776946
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632309215521972615, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_Name
+      value: Robot Enemy Shooter (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+--- !u!1001 &354328473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0146828
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000032424927
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.297763
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632309215521972615, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_Name
+      value: Robot Enemy Shooter (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+--- !u!1001 &618894562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.262684
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.683674
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632309215521972615, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_Name
+      value: Robot Enemy Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984599129262754215, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
 --- !u!1 &684149120
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037e29d152edd084ab230e9fb5002d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2500
+  mouseSensitivity: 10
   playerTransform: {fileID: 17496054}
 --- !u!1 &988572065
 GameObject:
@@ -1044,6 +1276,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578053103}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1721624447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.983692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000005722046
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.241547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216668997117084437, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632309215521972615, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
+      propertyPath: m_Name
+      value: Robot Enemy Shooter (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73244850b54ee1d4d8bdae03fb926407, type: 3}
 --- !u!1 &1843925797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,3 +1478,8 @@ SceneRoots:
   - {fileID: 684149123}
   - {fileID: 988572068}
   - {fileID: 179742009}
+  - {fileID: 618894562}
+  - {fileID: 354328473}
+  - {fileID: 198097672}
+  - {fileID: 1721624447}
+  - {fileID: 337952013}
